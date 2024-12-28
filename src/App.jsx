@@ -10,6 +10,9 @@ import MainLayout from './Layout/MainLayout';
 //pages
 import { Cart, Home, Product } from './Pages';
 
+//loaders
+import { loader as HomeLoader } from './Pages/Home';
+
 
 function App() {
  
@@ -20,7 +23,8 @@ function App() {
       children: [
         {
           index:true,
-          element: <Home/>
+          element: <Home/>,
+          loader:HomeLoader
         },
         {
           path:"/Cart",
