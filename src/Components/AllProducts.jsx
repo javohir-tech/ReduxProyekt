@@ -11,9 +11,9 @@ export default function AllProducts() {
     return (
         <div className='row g-3'>
             {products.map((product) => {
-                const { id, thumbnail, title } = product
+                const { id, thumbnail, title, price, discountPercentage , reviews } = product
                 return <div className='col-6 col-md-4 col-xl-3'>
-                    <SingleProduct  key={id} id={id} image={thumbnail} product={product} title={title }/>
+                    <SingleProduct  key={id} id={id} image={thumbnail} product={product} price={discountPercentage} originalPrice={price} reviews={reviews.length} title={title }/>
                 </div>
             })}
         </div>
