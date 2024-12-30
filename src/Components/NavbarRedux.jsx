@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux'
 
 export default function NavbarRedux() {
 
-    const {allProducts} = useSelector((state)=>state.product)
+    const { allProducts, products, price } = useSelector((state) => state.product)
+    console.log(allProducts, products, price)
 
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -14,7 +15,7 @@ export default function NavbarRedux() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Button variant="primary">
-                            Profile <Badge bg="secondary">{allProducts}</Badge>
+                            Profile <Badge bg="secondary">{allProducts}||{price}</Badge>
                             <span className="visually-hidden">unread messages</span>
                         </Button>
                     </Nav>
