@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux'
 import { addProduct } from '../Feauters/ProductSlice'
 
 
-export default function SingleProduct({ id, image, product, price, originalPrice, reviews, title }) {
+export default function SingleProduct({ id, image, product, price, reviews, title }) {
   const dispatch = useDispatch()
   const handleChange = (e) => {
     e.preventDefault()
@@ -20,14 +20,13 @@ export default function SingleProduct({ id, image, product, price, originalPrice
   return (
     <Link to={`/product/${id}`} style={{ textDecoration: "none", color: "black" }} className='d-block shadow rounded'>
       <div className='image bg-dark rounded'>
-        <img src={image} alt={title} className='rounded' />
+        <img src={image} alt={title} className='rounded img-fluid' />
       </div>
       <div className='p-3'>
         <h5 className=''>{title}</h5>
         <p className='bg-warning  d-inline px-1 rounded'>{reviews} ta sharh</p>
         <div className='d-flex justify-content-between mt-3 align-items-center'>
           <div>
-            <p className='text-secondary mb-0'><del>{originalPrice}</del></p>
             <h4>{price}</h4>
           </div>
           <div>
