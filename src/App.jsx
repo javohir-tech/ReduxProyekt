@@ -8,32 +8,42 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MainLayout from './Layout/MainLayout';
 
 //pages
-import { Cart, Home, Product } from './Pages';
+import { About, Cart, Contact, Home, Product } from './Pages';
 
 //loaders
 import { loader as HomeLoader } from './Pages/Home';
+import { loader as ProductLoader } from './Pages/Product';
 
 
 function App() {
- 
+
   const routes = createBrowserRouter([
     {
-      path:"/",
-      element:<MainLayout/>,
+      path: "/",
+      element: <MainLayout />,
       children: [
         {
-          index:true,
-          element: <Home/>,
-          loader:HomeLoader
+          index: true,
+          element: <Home />,
+          loader: HomeLoader
         },
         {
-          path:"/Cart",
-          element:<Cart/>
+          path: "/Cart",
+          element: <Cart />
         },
         {
           path: "/product/:id",
-          element: <Product/>
+          element: <Product />,
+          loader:ProductLoader
         },
+        {
+          path: "/about",
+          element: <About />
+        },
+        {
+          path: "/contact",
+          element: <Contact />
+        }
       ]
     }
   ])

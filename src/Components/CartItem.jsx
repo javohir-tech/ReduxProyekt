@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { addAmount, removeAmount, removeProduct } from '../Feauters/ProductSlice'
 
 export default function CartItem({ prod }) {
-    const { thumbnail, amount, price, description, brand, title, id } = prod
+    const { thumbnail, amount, price, title, id } = prod
     const dispatch = useDispatch()
     return (
         <tr>
@@ -16,6 +16,7 @@ export default function CartItem({ prod }) {
                     <div>
                         <h6 className='mb-0'>Price : {price}$</h6>
                         <p>Name: {title}</p>
+                        
                     </div>
                 </div>
             </td>
